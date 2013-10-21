@@ -1,0 +1,114 @@
+<p></p>
+<form method="post" action="boundcopies.php">
+	<table width="100%" border="0" cellspacing="0" cellpadding="5">
+		<!--DWLayoutTable-->
+		<tr>
+			<td colspan="2">
+				<p><font face="Helvetica, Geneva, Arial, SunSans-Regular, sans-serif"><strong>MAGISTRATES CASES - BOUND VOLUMES</strong></font></p>
+				<p><strong><font face="Helvetica, Geneva, Arial, SunSans-Regular, sans-serif">The <em>Magistrates Cases</em> are available in bound <img src="images/boundcopies.jpg" alt="" width="210" height="160" border="0" align="left" hspace="5">volumes back to 1975. It is planned to add further back issues as they become available. We offer each Annual volume bound in handsome burgundy with gold blocking for the price of only $100.00 each (inc GST and p&amp;p for delivery within Australia.) Each volume contains the Reported Cases and a comprehensive Annual Index. If you would like to place an order for these unique volumes simply contact <em>info@magistratescases.com.au</em> or place your order with your credit card (below)</font></strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="50%" valign="top">
+				<p>
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td align="center"><strong>Quantity</strong></td>
+						<td align="center"><strong>Volume</strong></td>
+					</tr>
+					{counter start=0 assign=i print=false name=bookloop}
+				{foreach from=$books item=book}
+					<tr>
+						<td align="center"><input type="text" name="quantity[{$i}]" size="2" value="{$order.quantity[$i]|default:0}"></td>
+						<td>{$books[$i]}</td>
+					</tr>
+					{counter assign=i print=false name=bookloop}
+				{/foreach}
+				</table>
+				{if isset($order_errors.quantity)}
+				<div class="alert">
+						{$order_errors.quantity}</div>
+				{/if}
+			</p><input type="hidden" name="action" value="order"></td>
+			<td width="50%" valign="top">
+				<center>
+					<p><strong>Shipping Information</strong></p>
+				</center>
+				<table border="0" cellpadding="2" cellspacing="2">
+					<tr>
+						<td align="right" valign="top">First Name</td>
+						<td><input type="text" name="fname" value="{$order.fname}" /> *
+						{if isset($order_errors.fname)}
+							<div class="alert">
+									{$order_errors.fname}</div>
+							{/if}
+					</td>
+					</tr>
+					<tr>
+						<td align="right" valign="top">Last Name</td>
+						<td><input type="text" name="lname" value="{$order.lname}" /> *
+						{if isset($order_errors.lname)}
+							<div class="alert">
+									{$order_errors.lname}</div>
+							{/if}
+					</td>
+					</tr>
+					<tr>
+						<td align="right" valign="top">Address</td>
+						<td><input type="text" name="address"	value="{$order.address}" /> *
+						{if isset($order_errors.address)}
+							<div class="alert">
+									{$order_errors.address}</div>
+							{/if}
+					</td>
+					</tr>
+					<tr>
+						<td align="right" valign="top">Suburb</td>
+						<td><input type="text" name="suburb"	value="{$order.suburb}" /> *
+						{if isset($order_errors.suburb)}
+							<div class="alert">
+									{$order_errors.suburb}</div>
+							{/if}
+					</td>
+					</tr>
+					<tr>
+						<td align="right" valign="top">State</td>	
+						<td><input type="text" name="state"		value="{$order.state}" /> *
+  						{if isset($order_errors.state)}
+							<div class="alert">
+									{$order_errors.state}</div>
+							{/if}
+					</td>
+					</tr>
+					<tr>
+						<td align="right" valign="top">Postcode</td>
+						<td><input type="text" name="pcode" value="{$order.pcode}" size="5" maxlength="5"/> *
+						{if isset($order_errors.pcode)}
+							<div class="alert">
+									{$order_errors.pcode}</div>
+							{/if}
+					</td>
+					</tr>
+					<tr>
+						<td align="right" valign="top">Email</td>
+						<td><input type="text" name="email" value="{$order.email}" /> *
+						{if isset($order_errors.email)}
+							<div class="alert">
+									{$order_errors.email}</div>
+							{/if}
+					</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>
+							<p><input type="submit" name="submit" value="Order Now" /></p>
+							<p>* required  </p>
+						</td>
+					</tr>
+				</table>
+			</td>
+		
+	
+</form>
+
+

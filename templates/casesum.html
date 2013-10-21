@@ -1,0 +1,7 @@
+<h1>Case Summaries</h1>
+<p>Click on year to download summaries of Cases reported.</p>
+<p>
+{foreach from=$files key=year item=url}
+	<a href="{$url|escape}" title="Case summaries for the year {$year}">{$year}</a><br />
+{/foreach}
+<p>
