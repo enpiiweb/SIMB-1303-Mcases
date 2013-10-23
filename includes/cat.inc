@@ -23,15 +23,10 @@ class cat extends DBObject {
 	{
 		parent::__construct($vars);
 	}
-		
-	public static function DbTableName()
+	
+	public static function DbTableFields()
 	{
-		return self::$db_table_name;
-	}
-		
-	public static function DbTableNameTest()
-	{
-		return self::$db_table_name;
+		return self::$db_table_fields;
 	}
 	
 	public function DbTableDef()

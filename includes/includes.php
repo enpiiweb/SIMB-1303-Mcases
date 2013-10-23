@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 $fileroot = dirname(__FILE__).'/../';
 //$fileroot = dirname(__FILE__).'/../';
 require_once($fileroot."includes/globals.php");

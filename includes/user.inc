@@ -49,6 +49,11 @@ password varchar (64)
 		return ($this->obj_usergroup instanceof usergroup);
 	}
 	
+	public static function DbTableFields()
+	{
+		return self::$db_table_fields;
+	}
+	
 	public function DbTableDef()
 	{
 		return self::$db_table_def;

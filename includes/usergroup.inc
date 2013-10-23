@@ -13,6 +13,11 @@ class usergroup extends DBObject {
 	private static $db_table_fields = array("id","name");
 	private static $db_table_id = "id";
 	
+	public static function DbTableFields()
+	{
+		return self::$db_table_fields;
+	}
+	
 	public function DbTableDef()
 	{
 		return self::$db_table_def;

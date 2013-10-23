@@ -18,6 +18,11 @@ cat int unsigned
 	private static $db_table_fields = array("id","file","date","title","description","cat","restricted");
 	private static $db_table_id = "id";
 	
+	public static function DbTableFields()
+	{
+		return self::$db_table_fields;
+	}
+	
 	public function DbTableDef()
 	{
 		return self::$db_table_def;

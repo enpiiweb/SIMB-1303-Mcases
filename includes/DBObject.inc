@@ -122,7 +122,8 @@ abstract class DBObject {
 		//}
 	}
 	
-	public static function DbTableName() {
+	public static function DbTableName()
+	{
 		return self::$db_table_name;
 	}
 	
@@ -136,7 +137,8 @@ abstract class DBObject {
 		return self::$db_table_init;
 	}*/
 	
-	public static function DbTableFields() {
+	public static function DbTableFields()
+	{
 		return self::$db_table_fields;
 	}
 	

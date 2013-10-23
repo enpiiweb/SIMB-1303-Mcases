@@ -52,6 +52,11 @@ readterms int(1) unsigned
 		parent::__construct($vars);
 	}
 	
+	public static function DbTableFields()
+	{
+		return self::$db_table_fields;
+	}
+	
 	public function DbTableDef()
 	{
 		return self::$db_table_def;

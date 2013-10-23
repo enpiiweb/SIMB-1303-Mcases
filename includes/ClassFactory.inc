@@ -1,7 +1,7 @@
 <?php
 class ClassFactory {
 
-	function ObjectNew($classname,$v,$id_field = false)
+	public static function ObjectNew($classname,$v,$id_field = false)
 	{
 		//	ObjectNew initialised an object with an array of data, or returns an object from the database.
 		
