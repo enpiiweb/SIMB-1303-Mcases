@@ -19,7 +19,6 @@ switch($action)
   	{
 		$word2 = $_POST['search_all']; // $word2 = $word;
   		$word = addslashes($_POST['search_all']);
-		
   		$sql['all'] = "(article.title like '%$word%' or article.court like '%$word%' or article.judge like '%$word%' or article.keywords like '%$word%' or article.content like '%$word%' or article.caseid like '%$word%' or article.courtid like '%$word%')";
   	}
 
@@ -96,9 +95,7 @@ switch($action)
 	}
 
 	if (!isset($sqljoin)) $sqljoin = "";
-	$articles = Classfactory::ObjectArray('article',true,$sqljoin." order by article.article_date");
-	//print $sqljoin;
-//print_r($articles);
+	$articles = Classfactory::ObjectArray('article', true, $sqljoin." order by article.article_date");
 
 if ($articles)
 {

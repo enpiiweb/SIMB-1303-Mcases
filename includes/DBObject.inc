@@ -82,10 +82,10 @@ METHODS
 	
 abstract class DBObject {
 
-	//private static $db_table_name = "";
+	private static $db_table_name = "";
 	//private static $db_table_def = "";
 	//private static $db_table_init = array();
-	//private static $db_table_fields = array();
+	private static $db_table_fields = array();
 	//private static $db_table_id = "";
 	public $additionalWhere;
 	
@@ -122,10 +122,9 @@ abstract class DBObject {
 		//}
 	}
 	
-	abstract public function DbTableName();
-	/*{
+	public static function DbTableName() {
 		return self::$db_table_name;
-	}*/
+	}
 	
 	abstract public function DbTableDef();
 	/*{
@@ -137,10 +136,9 @@ abstract class DBObject {
 		return self::$db_table_init;
 	}*/
 	
-	abstract public function DbTableFields();
-	/*{
+	public static function DbTableFields() {
 		return self::$db_table_fields;
-	}*/
+	}
 	
 	abstract public function DbTableId();
 	/*{

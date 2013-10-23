@@ -11,13 +11,7 @@ class usergroup extends DBObject {
 		);";
 	private static $db_table_init = array("insert into usergroup (name,id) values('Admin',-1)","insert into usergroup (name,id) values('Users',1)");
 	private static $db_table_fields = array("id","name");
-	private static $db_table_id = "id";	
-		
-	
-	public function DbTableName()
-	{
-		return self::$db_table_name;
-	}
+	private static $db_table_id = "id";
 	
 	public function DbTableDef()
 	{
@@ -27,11 +21,6 @@ class usergroup extends DBObject {
 	public function DbTableInit()
 	{
 		return self::$db_table_init;
-	}
-	
-	public function DbTableFields()
-	{
-		return self::$db_table_fields;
 	}
 	
 	public function DbTableId()
@@ -57,7 +46,7 @@ class usergroup extends DBObject {
 	
 	
 	
-	function Delete()
+	function Delete($id = NULL)
 	{
 		$u_ar = ClassFactory::ObjectArray("user",true,"where usergroup='{$this->id}'");
 		if(is_array($u_ar))

@@ -24,7 +24,12 @@ class cat extends DBObject {
 		parent::__construct($vars);
 	}
 		
-	public function DbTableName()
+	public static function DbTableName()
+	{
+		return self::$db_table_name;
+	}
+		
+	public static function DbTableNameTest()
 	{
 		return self::$db_table_name;
 	}
@@ -37,11 +42,6 @@ class cat extends DBObject {
 	public function DbTableInit()
 	{
 		return self::$db_table_init;
-	}
-	
-	public function DbTableFields()
-	{
-		return self::$db_table_fields;
 	}
 	
 	public function DbTableId()
@@ -97,7 +97,7 @@ class cat extends DBObject {
 		$res = parent::Delete($id);
 	}
 
-	function Save($id = null)
+	function Save($id = null, $DBI = NULL)
 	{
 		global $fileroot;
 		$res = parent::Save($id);

@@ -63,7 +63,7 @@ class ClassFactory {
 	
 	}
 
-	function ObjectArray($class, $object = false, $condition = false)
+	static function ObjectArray($class, $object = false, $condition = false)
 	{
 		//	ObjectArray returns an array of database information.
 	
@@ -75,8 +75,9 @@ class ClassFactory {
 		$val = false;
 		$key = "id";
 		eval("\$table_name = $class::DbTableName();");
-		$table_name = (strlen($table_name)>0)? $table_name : $classname;
+		$table_name = (strlen($table_name)>0)? $table_name : $class;
 		eval("\$fields = $class::DbTableFields();");
+		$fields = $condition;
 		if(is_array($fields))
 		{
 			$f = "";
@@ -87,7 +88,7 @@ class ClassFactory {
 				$f .= $table_name.".".$field;
 			}
 		} else {
-			$f = $fields;
+			$f = '*';
 		}
 		$query = "select $f from $table_name";
 		if($condition)

@@ -36,11 +36,6 @@ class article extends DBObject {
 		$this->save_password=true;
 		$this->obj_usergroup = null;
 	}
-		
-	public function DbTableName()
-	{
-		return self::$db_table_name;
-	}
 	
 	public function DbTableDef()
 	{
@@ -50,11 +45,6 @@ class article extends DBObject {
 	public function DbTableInit()
 	{
 		return self::$db_table_init;
-	}
-	
-	public function DbTableFields()
-	{
-		return self::$db_table_fields;
 	}
 	
 	public function DbTableId()

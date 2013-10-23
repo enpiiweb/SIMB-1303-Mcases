@@ -1,0 +1,11 @@
+1. Image cannot load
++ Reason: Root path of structure is set to '/'.
+_ Solution: Updated root path to local.
+
+2. Warning of using non-static functions as static functions.
++ Reason: method "DbTableName" and method "DbTableFields" from DBObject (and its extend classes)
+_ Solution: Change abstract function from DBObject to public static function and remove all the extended methods in extended classes (since they share the same access to a static private property)
+
+3. Search issue "undefined $classname in ClassFactory.inc, line 78"
++ Reason: wrong variable using $classname instead of $class (for the same type of functions, there's a conflict of $class and $classname everywhere)
+_ Solution: change $classname to $class

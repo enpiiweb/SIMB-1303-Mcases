@@ -16,14 +16,7 @@ cat int unsigned
 );";
 	private static $db_table_init = array();
 	private static $db_table_fields = array("id","file","date","title","description","cat","restricted");
-	private static $db_table_id = "id";	
-
-	
-	
-	public function DbTableName()
-	{
-		return self::$db_table_name;
-	}
+	private static $db_table_id = "id";
 	
 	public function DbTableDef()
 	{
@@ -33,11 +26,6 @@ cat int unsigned
 	public function DbTableInit()
 	{
 		return self::$db_table_init;
-	}
-	
-	public function DbTableFields()
-	{
-		return self::$db_table_fields;
 	}
 	
 	public function DbTableId()
@@ -66,7 +54,7 @@ cat int unsigned
 		}
 	}
 	
-	function Delete()
+	function Delete($id = NULL)
 	{
 		if(parent::Delete() > 0)
 			$this->DeleteFile();
