@@ -48,11 +48,6 @@ password varchar (64)
 		$this->obj_usergroup = ClassFactory::ObjectNew("usergroup",$this->usergroup);
 		return ($this->obj_usergroup instanceof usergroup);
 	}
-		
-	public function DbTableName()
-	{
-		return self::$db_table_name;
-	}
 	
 	public function DbTableDef()
 	{
@@ -62,11 +57,6 @@ password varchar (64)
 	public function DbTableInit()
 	{
 		return self::$db_table_init;
-	}
-	
-	public function DbTableFields()
-	{
-		return self::$db_table_fields;
 	}
 	
 	public function DbTableId()
@@ -107,7 +97,7 @@ password varchar (64)
 		else return $errors;
 	}
 
-	function Delete()
+	function Delete($id = NULL)
 	{
 		$id = $this->id;
 		$res = parent::Delete();

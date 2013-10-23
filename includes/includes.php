@@ -1,5 +1,6 @@
 <?php
 $fileroot = dirname(__FILE__).'/../';
+//$fileroot = dirname(__FILE__).'/../';
 require_once($fileroot."includes/globals.php");
 require_once($fileroot."includes/EmailCenter.inc");
 require_once($fileroot."includes/Smarty/Smarty.class.php");

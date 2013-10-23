@@ -52,12 +52,6 @@ readterms int(1) unsigned
 		parent::__construct($vars);
 	}
 	
-			
-	public function DbTableName()
-	{
-		return self::$db_table_name;
-	}
-	
 	public function DbTableDef()
 	{
 		return self::$db_table_def;
@@ -66,11 +60,6 @@ readterms int(1) unsigned
 	public function DbTableInit()
 	{
 		return self::$db_table_init;
-	}
-	
-	public function DbTableFields()
-	{
-		return self::$db_table_fields;
 	}
 	
 	public function DbTableId()
