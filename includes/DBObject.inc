@@ -243,7 +243,7 @@ abstract class DBObject {
 		}
 		foreach($vals as $f=>$v)
 		{
-			$vals[$f] = "'".mysql_escape_string($v)."'";
+			$vals[$f] = "'".mysql_real_escape_string($v)."'";
 		}
 		
 		return $vals;

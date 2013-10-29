@@ -21,7 +21,8 @@ switch($action)
 	$smarty->assign('main_displayfile', 'customerform.tpl');
 	break;
   case 'edit':
-  	$customer = ClassFactory::ObjectNew('customer',$id);
+  	$customer = ClassFactory::ObjectNew('Customer',$id);
+  	print_r($customer);
 	$smarty->assign('customerform_customer', $customer);
 	$smarty->assign('main_displayfile', 'customerform.tpl');
   	break;
